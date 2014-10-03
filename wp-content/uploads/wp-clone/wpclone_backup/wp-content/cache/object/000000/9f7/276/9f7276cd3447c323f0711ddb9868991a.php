@@ -1,0 +1,1 @@
+¸)T<?php exit; ?>a:1:{s:7:"content";s:229:"a:3:{s:25:"relevanssi/relevanssi.php";s:20:"relevanssi_uninstall";s:43:"testimonials-widget/testimonials-widget.php";a:2:{i:0;s:19:"Testimonials_Widget";i:1;s:9:"uninstall";}s:26:"marketing-optimizer/mo.php";s:12:"mo_uninstall";}";}
