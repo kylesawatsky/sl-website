@@ -17,13 +17,13 @@
 		<?php highwind_footer_before(); ?>
 
 		<footer class="footer content-wrapper" role="contentinfo">
-			
+
 			<div class="superfooter-content">
 			
 				<?php safetyline_superfooter(); ?>
 			
 			</div>
-
+		
 			<div class="footer-content">
 
 				<?php highwind_footer(); ?>

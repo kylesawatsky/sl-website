@@ -108,7 +108,6 @@ function safetyline_superfooter() {
 	do_action( 'safetyline_superfooter' );
 }
 
-
 /**
  * Highwind before content wrapper action
  * @since 1.0

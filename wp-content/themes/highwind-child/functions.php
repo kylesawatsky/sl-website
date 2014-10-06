@@ -27,7 +27,6 @@ add_action( 'wp_enqueue_scripts', 'safetyline_load_styles' );
 /** Filters 
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop' );*/
-add_filter( 'salesforce_w2l_post_args', 'salesforce_form_newsletter_signup' );
 add_filter('highwind_featured_image_size', 'sl_set_featured_image_size');
  
 function safetyline_load_javascript() {
@@ -156,7 +155,6 @@ if ( ! function_exists( 'highwind_main_navigation' ) ) {
 				<li class="menu-item menu-item-contact"><a id="contact-button" class="lightbox-popup" href="#contact-form"><span id="contact">Contact</span><i id="contact-icon" class="fa"></i></a></li>
 		<?php if (is_front_page()) { ?>
 				<li class="menu-item menu-item-login"><a href="https://www.slmonitor.com/login" target="_blank"><span>Login</span><i class="fa"></i></a></li>
-				<!--<li class="menu-item menu-item-support"><a href="https://safetyline.zendesk.com/home" target="_blank"><span>Support</span><i class="fa"></i></a></li>-->
 
 		<?php } ?>
 				<li class="menu-item"><i class="fa fa-search search-button"></i></li>
@@ -171,81 +169,11 @@ if ( ! function_exists( 'highwind_main_navigation' ) ) {
 function highwind_site_title() {
 		if (is_front_page()) {
 		?>
-			<!--<div class="flexslider">
-  				<ul class="slides">
-				    	<li class="slide-one">
-				      		<div class="flex-background"><img src="<?php echo content_url(); ?>/uploads/2014/01/1-background.jpg" alt="" /></div>
-							<div class="flex-slide-wrap">
-								<div class="flex-caption slide-one caption-side">
-									<img class="caption-logo" src="<?php echo content_url(); ?>/uploads/2014/02/safetyline_logo_white.png" alt="" />
-									<div class="caption-blue">
-										Are your workers<br /><span class="caption-bold">safe</span> right now?
-										<a href="/"><img src="<?php echo content_url(); ?>/uploads/2014/01/1-arrow.png" alt="" /></a>
-									</div>
-								</div>
-								<div class="flex-illustration slide-one caption-side">
-									<img src="<?php echo content_url(); ?>/uploads/2014/01/1-man.png" alt="" />
-								</div>
-							</div>
-				    	</li>
-				    	<li class="slide-two">
-				      		<div class="flex-background"><img src="<?php echo content_url(); ?>/uploads/2014/01/2-background.jpg" alt="" /></div>
-							<div class="flex-slide-wrap">
-								<div class="flex-illustration slide-two">
-									<img class="spacer" src="<?php echo content_url(); ?>/uploads/2014/02/2-smartphones.png" alt="" />
-									<img class="first secondary" src="<?php echo content_url(); ?>/uploads/2014/02/2-smartphones.png" alt="" />
-									<img class="second secondary" src="<?php echo content_url(); ?>/uploads/2014/02/2-computerTablet.png" alt="" />
-									<img class="third secondary" src="<?php echo content_url(); ?>/uploads/2014/02/2-spotInReach.png" alt="" />
-								</div>
-								<div class="flex-caption slide-two">
-									<div class="caption-clear">
-										<span class="caption-bold">Work Alone Safety</span><br />with all your Devices
-										<a href="/"><img src="<?php echo content_url(); ?>/uploads/2014/01/2-arrow.png" alt="" /></a>
-									</div>
-								</div>
-							</div>
-				    	</li>
-						<li class="slide-three">
-				      		<div class="flex-background"><img src="<?php echo content_url(); ?>/uploads/2014/01/3-background.jpg" alt="" /></div>
-							<div class="flex-slide-wrap">
-								<div class="flex-caption slide-three">
-									<img class="caption-logo" src="<?php echo content_url(); ?>/uploads/2014/02/safetyline_logo_white.png" alt="" />
-									<div class="caption-orange">
-										Do you have a<br />Working Alone <span class="caption-bold">plan?</span>
-										<a href="/solutions#block-compliance"><img src="<?php echo content_url(); ?>/uploads/2014/01/1-arrow.png" alt="" /></a>
-									</div>
-								</div>
-								<div class="flex-illustration slide-three">
-									<img src="<?php echo content_url(); ?>/uploads/2014/01/3-nurse.png" alt="" />
-								</div>
-							</div>
-				    	</li>
-						<li class="slide-four">
-				      		<div class="flex-background"><img src="<?php echo content_url(); ?>/uploads/2014/02/4-background.jpg" alt="" /></div>
-							<div class="flex-slide-wrap">
-								<div class="flex-caption slide-four">
-									<div class="caption-clear">
-										<p class="quote-text">"I have had several families call me directly to say that they were<br />
-										<span class="caption-bold">very happy that we implemented Safetyline...</span><br />It is a very
-										cost effective way to ensure that we are complying with working alone legislation, easy for
-										our workers to use, and well worth the money. I have, and will continue to promote Safetyline
-										to everyone I know who can benefit from it."</p><p class="quote-source">- Roni Green (HSE Manager)
-										<br /><span class="caption-bold">Meridian Directional Services Inc.</span></p>
-									</div>
-								</div>
-								<div class="flex-illustration slide-four">
-									<img src="<?php echo content_url(); ?>/uploads/2014/02/4-logo.png" alt="" />
-								</div>
-							</div>
-				    	</li>
-				</ul>
-			</div>-->
 			<div class="top-page front-page">
 				<div class="top-page-title front-title">
 					<div class="top-page-title-text front-title-text">Work Alone Monitoring</div>
-					<!--<div class="top-page-subtitle-text front-subtitle-text">We help you get a complete safety network on your existing devices: check-in, detect, monitor, locate and respond.</div>-->
 				</div>
-				<img class="top-page-sidelogo" src="<?php echo content_url(); ?>/uploads/2014/09/SafetyLine-Logo.jpg" alt="" />
+				<img class="top-page-sidelogo" src="<?php echo content_url(); ?>/uploads/2014/09/SafetyLine-Logo1.jpg" alt="" />
 				<img class="top-page-banner front-banner" src="<?php echo content_url(); ?>/uploads/2014/09/Main_Page_graphic.jpg" alt="" />
 			</div>
 		<?php
@@ -448,10 +376,11 @@ function sl_content_block($atts) {
 	$supplementImage = $meta[0][0]["content-block-image"];
 	
 	$leftImage = (strpos($class, 'leftimg') !== false);
-	
+
 	$html = "<section id='section-" . $id . "' class='content-block " . $class . "'>";
 	$html .= "<div class='info-section'>";
 	$html .= "<a id='block-" . $anchor . "' class='anchor' data-location='" . $id . "' data-title='" . $title . "'></a>";
+	
 	if($title != "Smartphones") {
 		if ($leftImage) {
 			blockSide($html, $supplementImage, "");
@@ -466,7 +395,6 @@ function sl_content_block($atts) {
 	$html .= "<p class='content-heading'>" . $initialTitle . "</p>";
 	$html .= "<p class='content-subheading'>" . $initialText . "</p>";
 	
-	//added
 	if($page->post_content != "") {
 		$html .= "<div class='content'>" . $page->post_content . "</div>";
 	}
@@ -477,8 +405,6 @@ function sl_content_block($atts) {
 
 	$html .= "</div>";
 
-	//added
-	//blockSide($html, $supplementImage, "");
 	if (!$leftImage && $title != "Smartphones") {
 		blockSide($html, $supplementImage, "full");
 	}
@@ -492,17 +418,7 @@ function sl_content_block($atts) {
 	if($page->post_content != "") {
 		$html .= "<div class='expand-section'>";
 
-		//$html .= $page->post_content;
-		
-		if($class == "works") {
-			//addButton($html, $class);
-		}
-
 		$html .= "</div>";
-	}
-	
-	if($class == "features") {
-		addButton($html, $class);
 	}
 	
 	$html .= "</section>";
@@ -548,9 +464,9 @@ function sl_tour_block($atts) {
 	foreach ($entries as $entry) {
 		$arr[] = "<" . $entry->tagName . ">" . get_inner_html($entry) . "</" . $entry->tagName . ">";
 	}
-	
-	$html = do_shortcode('[content id="2" title="How it Works" class="works"]');
 
+	$html = do_shortcode('[content id="2" title="How it Works" class="works"]');
+	
 	$html .= "<section class='content-block width-wrap'>";
 	$html .= "<div class='info-section'>";		
 	
@@ -571,7 +487,7 @@ Explore more to find out how SafetyLine can help you provide a safer working env
 	$html .= "</div>";
 	$html .= "</section>";
 	
-	
+
 	$html .= "<section class='content-block width-wrap'>";
 	$html .= "<div class='info-section'>";	
 	
@@ -658,7 +574,7 @@ function sl_company_testimonials2() {
 
 <?php
 function sl_tryit() {
-	$html = "<div class='trial'><div class='trial-text'><div class='trial-text-header'>What are you waiting for?</div><div class='trial-text-subheader'>Talk to us to see how easy it can be.</div></div><div class='trial-button'><a href='#demo-form' class='button lightbox-popup'>Try it Free!</a></div></div><p>";
+	$html = "<div class='trial width-wrap'><div class='trial-text'><div class='trial-text-header'>What are you waiting for?</div><div class='trial-text-subheader'>Talk to us to see how easy it can be.</div></div><div class='trial-button'><a href='#demo-form' class='button lightbox-popup'>Try it Free!</a></div></div><p>";
 	
 	return $html;
 }
@@ -800,55 +716,58 @@ function sl_info_resources() {
 }
 ?>
 
-<?php 
-function salesforce_form_newsletter_signup($args) {
-	$wantsNewsletter = $args['body']['newsletter'];
-	$emailAddress = $args['body']['email'];
-	
-	if($wantsNewsletter) {
-		wp_remote_post("https://app.getresponse.com/add_contact_webform.html?u=ZTov", array(
-			'body' => array('email' => $emailAddress)
-			)
-		);
+<?php /**
+function sl_add_cpt_to_search($query) {
+	if(is_search()) {
+		$post_types = get_post_types(array('public' => true, 'exclude_from_search' => false), 'objects');
+		$searchable_types = array();
+		if($post_types) {
+			foreach($post_types as $type) {
+				$searchable_types[] = $type->name;
+			}
+		}
+		$query->set('post_type', $searchable_types);
 	}
-	
-	return $args;
-}
+	return $query;
+}*/
 ?>
 
 <?php
-function blog_newsletter_signup() { ?>
-<div id="WFItem" class="wf-formTpl">
-	<form accept-charset="utf-8" action="https://app.getresponse.com/add_contact_webform.html?u=ZTov" method="post">
-		<div class="wf-box">
-			<div id="WFIcenter" class="wf-body">
-				<ul class="wf-sortable" id="wf-sort-id">
-					<li>
-						Like this post? Get more great content by signing up for our SafetyLine Newsletter!
-					</li>
-					<li class="wf-email" rel="undefined">
-						<div class="wf-contbox">
-							<div class="wf-labelpos">
-								<label class="wf-label">Email:</label>
+function blog_newsletter_signup() { 
+if(is_single()) {?>
+	<div id="WFItem" class="wf-formTpl">
+		<form accept-charset="utf-8" action="https://app.getresponse.com/add_contact_webform.html?u=ZTov" method="post">
+			<div class="wf-box">
+				<div id="WFIcenter" class="wf-body">
+					<ul class="wf-sortable" id="wf-sort-id">
+						<li>
+							Like this post? Get more great content by signing up for our SafetyLine Newsletter!
+						</li>
+						<li class="wf-email" rel="undefined">
+							<div class="wf-contbox">
+								<div class="wf-labelpos">
+									<label class="wf-label">Email:</label>
+								</div>
+								<div class="wf-inputpos">
+									<input class="wf-input wf-req wf-valid__email" type="text" name="email">
+								</div>
+								<em class="clearfix clearer"></em>
 							</div>
-							<div class="wf-inputpos">
-								<input class="wf-input wf-req wf-valid__email" type="text" name="email">
+						</li>
+						<li class="wf-submit" rel="undefined">
+							<div class="wf-contbox">
+								<div class="wf-inputpos">
+									<input type="submit" class="wf-button" name="submit" value="Sign Up!">
+								</div>
+								<em class="clearfix clearer"></em>
 							</div>
-							<em class="clearfix clearer"></em>
-						</div>
-					</li>
-					<li class="wf-submit" rel="undefined">
-						<div class="wf-contbox">
-							<div class="wf-inputpos">
-								<input type="submit" class="wf-button" name="submit" value="Sign Up!">
-							</div>
-							<em class="clearfix clearer"></em>
-						</div>
-					</li>
-				</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-		<input type="hidden" name="webform_id" value="6718305">
-	</form>
-</div>
-<?php } ?>
+			<input type="hidden" name="webform_id" value="6718305">
+		</form>
+	</div>
+<?php
+} 
+} ?>

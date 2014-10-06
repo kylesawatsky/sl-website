@@ -759,7 +759,6 @@ form .comment-form-url {
   float: right;
   margin-right: 0;
 }
-
 form [placeholder]:focus::-webkit-input-placeholder {
   -webkit-transition: opacity 0.5s 0.5s ease;
   -moz-transition: opacity 0.5s 0.5s ease;
@@ -3309,12 +3308,21 @@ article.page {
 }
 
 /* Slider Title */
-/*.lone-worker-title {
+.content-header {
 	text-align: center;
+	background-color: #6F8FD0;
+	color: #FFF;
+	padding: 1em;
+}
+
+.content-header .content-heading {
 	font-size: 2.5em;
-	color: #D17828;
-	line-height: 1.2em;
-}*/
+	margin-bottom: 0.5em;
+}
+
+.content-header .content-subheading {
+	font-size: 1.5em;
+}
 
 /* Main nav stuff */
 .main-nav h2 {
@@ -3648,8 +3656,6 @@ article.page {
 }
 
 .article-content section.works {
-	/*background-color: rgba(111, 143, 208, 0.5);*/
-	/*background-color: #DDAD7F;*/
 	background-color: rgba(111, 143, 208, 1);
 	padding: 3em 0;
 }
@@ -3682,12 +3688,9 @@ article.page {
 }
 
 .article-content section.devices {
-	/*background-image: url(../../uploads/2014/02/devices_background.jpg);
-	background-size: cover;*/
 	padding: 5em 0;
 	color: white;
 	background-color: #6F8FD0;
-	/*-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/wp-content/uploads/2014/02/devices_background.jpg', sizingMethod='scale')" \0;*/
 }
 
 .article-content section.devices .button {
@@ -3704,7 +3707,6 @@ article.page {
 	font-size: 2.5em;
 	margin-bottom: 0.5em;
 }
-
 .article-content section.tour .info-section .info-image div.inline-tour-text {
 	margin-bottom: 4em;
 }
@@ -3866,7 +3868,6 @@ body:after {
 .interstitial {
 	color: white;
 	position: relative;
-	/*margin-bottom: 3em;*/
 	background-size: cover;
 }
 
@@ -3895,25 +3896,9 @@ body:after {
 	font-size: 1.5em;
 }
 
-/*.interstitial.interstitial-response {
-	background-image: url(../../uploads/2014/02/benefits-response.jpg);
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/wp-content/uploads/2014/02/benefits-response.jpg', sizingMethod='scale')" \0;
-}
-
-.interstitial.interstitial-business {
-	background-image: url(../../uploads/2014/02/benefits-business.jpg);
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/wp-content/uploads/2014/02/benefits-business.jpg', sizingMethod='scale')" \0;
-}
-
-.interstitial.interstitial-managerial {
-	background-image: url(../../uploads/2014/02/solutions-managerial1.jpg);
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/wp-content/uploads/2014/02/solutions-managerial1.jpg', sizingMethod='scale')" \0;
-}*/
-
 /* Footer styles */
 .superfooter-content {
 	margin: 0;
-	/*padding: 1.25% 0;*/
 	width: 100%;
 	background-color: #CCC;
 }
@@ -4228,17 +4213,20 @@ input[type="text"].newsletter-email {
 	.top-page .top-page-title.front-title {
 		font-size: 0.5em;
 	}
+	
+	.top-page .top-page-title.front-title {
+		font-size: 0.5em;
+	}
 }
 
 @media only screen and (min-width: 769px) {
 	/* CSS Resets */
 	.page-template .width-wrap,
-	section.devices-overview > div,
 	section.overview,
 	section.works > div,
 	section.features,
 	section.devices > div,
-	section.cloud > div.
+	section.cloud > div,
 	section.tour {
 		max-width: 74.55em !important;
 		padding-left: 3.517em !important;
@@ -4246,6 +4234,12 @@ input[type="text"].newsletter-email {
 		margin-top: 1.777em !important;
 		margin-bottom: 1.777em !important;
 		margin: auto auto;
+	}
+	
+	section.devices-overview > div {
+		max-width: 74.55em !important;
+		padding-left: 3.517em !important;
+		padding-right: 3.517em !important;
 	}
 	
 	.sidebar {
@@ -4486,24 +4480,6 @@ input[type="text"].newsletter-email {
 	}
 }
 
-/*@media only screen and (min-width: 950px) {
-	.article-content section.tour .info-section .info-image div {
-		display: inline-block
-	}
-
-	.article-content section.tour .info-image > div {
-		width: 33.33%;
-	}
-	
-	.article-content section.tour .info-section .info-image div.inline-tour-text {
-		display: none;
-	}
-	
-	.tour .customreadmore-js-section, .tour .readmore-js-toggle {
-		display: block;
-	}
-}*/
-
 @media only screen and (min-width: 1000px) {
 	.social {
 		display: inline;
@@ -4538,7 +4514,7 @@ input[type="text"].newsletter-email {
 	.side-nav #contact-icon {
 		display: none;
 	}
-	
+
 	.side-nav .menu-item-newsletter a.lightbox-popup#newsletter-icon {
 		display: none;
 	}

@@ -12,7 +12,9 @@ jQuery(window).load(function() {
 
 function loadCommon() {
 jQuery(document).ready(function() {
+	//Note: This stuff is all dumb.
 	//Initial fade for the content blocks
+	/*
 	jQuery(".article-content section.content-block").css("opacity", 0.6);
 	jQuery(".post-760 .content-block").css("opacity", 1);
 
@@ -40,17 +42,6 @@ jQuery(document).ready(function() {
 		offset: '20%'
 	});
 	
-	//Handles the read more links on the content blocks
-	/*jQuery('.expand-section').readmore({
-		speed: 600,
-		maxHeight: 0,
-		moreLink: '<div><div class="readmore-arrow-container"><img class="readmore-js-arrow" src="/wp-content/uploads/2013/12/arrow-grey.png"></div></div>',
-		lessLink: '',
-		afterToggle: function(trigger, element, more) {
-			jQuery.waypoints('refresh');
-		}
-	});*/
-	
 	jQuery('.custom-expand-section').customreadmore({
 		speed: 600,
 		maxHeight: 0,
@@ -59,7 +50,7 @@ jQuery(document).ready(function() {
 		afterToggle: function(trigger, element, more) {
 			jQuery.waypoints('refresh');
 		}
-	});
+	});*/
 	
 	//Inline colorbox implementation
 	jQuery(".lightbox-popup").magnificPopup({
